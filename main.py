@@ -180,7 +180,7 @@ if user_input:
         st.session_state['messages'].append({'role':'user','content':f'{user_input}'})
 
         response = openai.ChatCompletion.create(
-            model='gpt 3.5=turbo-0613'
+            model='gpt 3.5=turbo-0613',
             messages=st.session_state['messages'],
             function_call='auto'
         )
@@ -210,7 +210,7 @@ if user_input:
                     }
                 )
                 second_response=openai.ChatCompletion.create(
-                    model='gpt 3.5=turbo-0613'
+                    model='gpt 3.5=turbo-0613',
                     messages=st.session_state['messages']
                 )
                 st.text(second_response['choices'][0]['messsage']['content'])
