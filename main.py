@@ -43,7 +43,9 @@ def calculate_MACD(ticker,window):
 def plot_stock_price(ticker):
     data = yf.Ticker(ticker).history(period='1y').close
     plt.figure(figsize=(10, 5))
-    plt.plot(*args: data.index,data.Close)
+    #plt.plot(*args: data.index,data.Close)
+    plt.plot(data.index, data['Close'])
+
     plt.title('{ticker} Stock Price Over Last Year')
     plt.xlabel('Date')
     plt.ylabel('Stock Price {$}')
