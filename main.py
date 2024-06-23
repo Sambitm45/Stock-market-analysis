@@ -51,7 +51,7 @@ def plot_stock_price(ticker):
     plt.ylabel('Stock Price {$}')
     plt.grid(True)
     plt.savefig('stock.png')
-    plot.close()
+    plt.close()
 
 
 
@@ -162,7 +162,7 @@ fuctions = [
 
 ]
 
-avilable_fuctions ={
+available_fuctions ={
     'get_stock_price':get_stock_price,
     'calculate_SMA':calculate_SMA,
     'calculate_EMA':calculate_EMA,
@@ -194,7 +194,7 @@ if user_input:
             elif function_name in ['calculate_EMA','calculate_SMA']:
                 args_dict={'ticker':function_args.get('ticker'),'window':function_args.get('window')}
 
-            function_to_call = available_functions[function_name]
+            function_to_call = available_fuctions[function_name]
             function_response = function_to_call(**args_dict)
 
             if function_name == 'plot_stock_price':
